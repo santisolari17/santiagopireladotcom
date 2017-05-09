@@ -1,0 +1,47 @@
+<md-tab label="{{ hCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pLocaleSelect">
+	<md-content class="md-padding background-fix">
+		
+		<div layout="row" flex>
+			<p>Select hour range...</p>
+		</div>
+		<div layout="row">
+			<span flex="5"></span>
+			<md-input-container>
+			<label>Hour from</label>
+				<md-select ng-model="ctrl.hourFrom" ng-change="ctrl.onChangeHourSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="hour in ctrl.hourLabelsForSelect" ng-value="hour">{{ hour }}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container>
+			<label>am/pm</label>
+				<md-select ng-model="ctrl.fromAmPm" ng-change="ctrl.onChangeHourSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option value="am">am</md-option>
+					<md-option value="pm">pm</md-option>
+				</md-select>
+			</md-input-container>
+
+			<span flex="10"></span>
+
+			<md-input-container>
+			<label>Hour to</label>
+				<md-select ng-model="ctrl.hourTo" ng-change="ctrl.onChangeHourSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="hour in ctrl.hourLabelsForSelect" ng-value="hour">{{ hour }}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container>
+			<label>am/pm</label>
+				<md-select ng-model="ctrl.toAmPm" ng-change="ctrl.onChangeHourSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option value="am">am</md-option>
+					<md-option value="pm">pm</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		
+		{{ ctrl.param_HourFrom + " - " + ctrl.param_HourTo }}
+
+	</md-content>
+</md-tab>

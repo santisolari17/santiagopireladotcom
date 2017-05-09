@@ -1,0 +1,109 @@
+﻿<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" class="section-title-container" layout-margin flex>
+    <md-icon md-svg-icon="svgInventario"></md-icon>
+    <p class="section-title">Contenedor - Directiva</p>
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="column" class="layoutPageHeader" layout-margin flex>
+    <p>Contiene reportes exclusivos para miembros de la Junta Directiva</p>
+    <md-divider></md-divider>
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" ng-show="$mdMedia('xs')" layout-margin layout-padding>
+    
+    <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Media XS</span>
+            <span class="md-subhead">xs</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="pdCtrl.showAdvanced($event)">Ejecutar Reporte</md-button
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" ng-show="$mdMedia('sm')" layout-margin layout-padding>
+    
+    <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Media SM</span>
+            <span class="md-subhead">sm</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="pdCtrl.showAdvanced($event)">Ejecutar Reporte</md-button
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" ng-show="$mdMedia('md')" layout-margin layout-padding>
+    
+    <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">media MD {{ $mdMedia('md') + ' - ' + snCtrl.mdMediaValue('md') }}</span>
+            <span class="md-subhead">md</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="pdCtrl.showAdvanced($event)">Ejecutar Reporte</md-button
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" ng-show="$mdMedia('lg')" layout-margin layout-padding layout-wrap>
+    
+    <md-card ng-repeat="rpt in snCtrl.rptObj.rptDirectiva" ng-style="snCtrl.rptCardsCss.lg" flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ rpt.rptName }}</span>
+            <span class="md-subhead">lg</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="pdCtrl.showAdvanced($event)">Ejecutar Reporte</md-button
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+</div>
+
+<div ng-click="snCtrl.closeSidenav()" style="outline: none;" layout="row" ng-show="$mdMedia('gt-lg')" layout-margin layout-padding layout-wrap>
+    
+    <md-card ng-repeat="rpt in snCtrl.rptObj.rptDirectiva" ng-style="snCtrl.rptCardsCss.gtlg" flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ rpt.rptName }}</span>
+            <span class="md-subhead">gt-lg</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="pdCtrl.showAdvanced($event)">Ejecutar Reporte</md-button
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+</div>

@@ -1,0 +1,40 @@
+﻿<md-dialog aria-label="Select Params" ng-controller="paramDialogController as pdCtrl">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Select params for rpt {{ pdCtrl.twowaytest }}<div request="pdCtrl.data"></div></h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="pdCtrl.cancel()">
+                <md-icon md-svg-src="" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content style="min-width:600px;min-height:350px;">
+        <!-- <md-dialog-content style="max-width:1700px;max-height:768px;width:1024px;height:550px;"> -->
+        <!-- <md-dialog-content ng-class="{paramWindowBig: !$mdMedia('gt-sm')}" flex="100"> -->
+        <md-tabs md-dynamic-height md-border-bottom>
+            <!-- Tabs Directives -->
+            <date-range></date-range>
+            <month-select></month-select>
+            <locale-select></locale-select>
+            <locale-option></locale-option>
+            <department-select></department-select>
+            <search-products></search-products>
+            <search-providers></search-providers>
+            <input-cedula></input-cedula>
+            <input-caja></input-caja>
+            <hour-range></hour-range>
+            <periodonomina-gp></periodonomina-gp>
+
+        </md-tabs>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <md-button class="md-default md-raised" ng-click="pdCtrl.cancel()">Cancelar</md-button>
+        <md-button class="md-primary md-raised" ng-click="pdCtrl.hide()" ng-href="views/crReportViewer2.aspx">Ejecutar</md-button>
+        <md-button class="md-primary md-raised" ng-click="pdCtrl.execCrystalReport()">Ejecutar2</md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

@@ -1,0 +1,45 @@
+<md-tab label="{{ pnGpCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pNominaGp">
+	<md-content class="md-padding background-fix">
+		
+		<div layout="row" flex>
+			<p>Select Periodo Nomina GP...</p>
+		</div>
+		<div layout="row">
+			<span flex="5"></span>
+			<md-input-container>
+			<label>Year from</label>
+				<md-select ng-model="ctrl.pgpYearFrom" ng-change="ctrl.onChangePgpSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="year in ctrl.pNominaAnos" ng-value="year">{{ year }}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container>
+			<label>Periodo GP From</label>
+				<md-select ng-model="ctrl.pgpFrom" ng-change="ctrl.onChangePgpSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="p in ctrl.apNominaGp" ng-value="p.id">{{ p.label }}</md-option>
+				</md-select>
+			</md-input-container>
+
+			<span flex="10"></span>
+
+			<md-input-container>
+			<label>Year to</label>
+				<md-select ng-model="ctrl.pgpYearTo" ng-change="ctrl.onChangePgpSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="year in ctrl.pNominaAnos" ng-value="year">{{ year }}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container>
+			<label>Periodo Gp To</label>
+				<md-select ng-model="ctrl.pgpTo" ng-change="ctrl.onChangePgpSelect()" flex>
+					<md-option><em>None</em></md-option>
+					<md-option ng-repeat="p in ctrl.apNominaGp" ng-value="p.id">{{ p.label }}</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		
+		{{ ctrl.param_pgpFrom + " - " + ctrl.param_pgpTo }}
+
+	</md-content>
+</md-tab>

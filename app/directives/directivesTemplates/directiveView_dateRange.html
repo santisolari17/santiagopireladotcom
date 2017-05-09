@@ -1,0 +1,20 @@
+<md-tab label="{{ dCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pDaterange">
+	<md-content class="md-padding background-fix" flex="100">
+
+		<div layout="row" flex="100">
+			<p>Select date range...</p>
+		</div>
+		<div layout="row" flex="100">
+			<div layout="column" flex="40">
+				<p>From</p>
+				<md-datepicker ng-model="ctrl.fromDate" md-max-date="ctrl.toDate" md-placeholder="Enter date" md-hide-icons="triangle"></md-datepicker>
+			</div>
+			<span flex="5"></span>
+			<div layout="column" flex="40">
+				<p>To</p>
+				<md-datepicker ng-model="ctrl.toDate" md-min-date="ctrl.fromDate" md-max-date="ctrl.today" md-placeholder="Enter date" md-hide-icons="triangle"></md-datepicker>
+			</div>
+		</div>
+		
+	</md-content>
+</md-tab>

@@ -1,0 +1,31 @@
+<md-tab label="{{ lCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pLocaleSelect">
+	<md-content class="md-padding background-fix">
+		
+		<div layout="row" flex>
+			<p>Select locales...</p>
+		</div>
+		<div layout="row">
+			<md-list layout="column">	
+				<md-list-item class="santimd-narrow">
+					<md-checkbox ng-model="ctrl.localeSelectAll" ng-click="ctrl.toggleAllLocales()"></md-checkbox>
+					<p>Select All</p>
+				</md-list-item>
+			</md-list>
+		</div>
+		<div layout="row">
+			<md-list layout="column">	
+				<md-list-item ng-repeat="localeA in ctrl.localesSideA" class="santimd-narrow">
+					<md-checkbox ng-model="localeA.isSelected"></md-checkbox>
+					<p>{{ localeA.name }}</p>
+				</md-list-item>
+			</md-list>
+			<md-list layout="column">	
+				<md-list-item ng-repeat="localeB in ctrl.localesSideB" class="santimd-narrow">
+					<md-checkbox ng-model="localeB.isSelected"></md-checkbox>
+					<p>{{ localeB.name }}</p>
+				</md-list-item>
+			</md-list>
+		</div>
+		
+	</md-content>
+</md-tab>

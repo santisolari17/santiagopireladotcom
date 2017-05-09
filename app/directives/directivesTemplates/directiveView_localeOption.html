@@ -1,0 +1,25 @@
+<md-tab label="{{ oCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pLocaleOption">
+	<md-content class="md-padding background-fix">
+		
+		<div layout="row" flex>
+			<p>Select locale... {{ ctrl.localeOptionSelected }}</p>
+		</div>
+
+		<div layout="row">
+			
+			<div layout="column" flex="50">
+				<md-radio-group ng-model="ctrl.localeOptionSelected" ng-repeat="localeA in ctrl.localesSideA">
+					<md-radio-button value="{{ localeA.id }}" class="md-primary">{{ localeA.name }}</md-radio-button>
+				</md-radio-group>
+			</div>
+
+			<div layout="column" flex="50">
+				<md-radio-group ng-model="ctrl.localeOptionSelected" ng-repeat="localeB in ctrl.localesSideB">
+					<md-radio-button value="{{ localeB.id }}" class="md-primary">{{ localeB.name }}</md-radio-button>
+				</md-radio-group>
+			</div>
+
+		</div>
+		
+	</md-content>
+</md-tab>

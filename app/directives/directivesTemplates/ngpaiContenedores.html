@@ -1,0 +1,14 @@
+﻿<md-toolbar class="md-toolbar-tools side-toolbar md-accent">
+    <h1>Contenedores</h1>
+</md-toolbar>
+<md-content layout-padding flex>
+    <md-list>
+
+        <md-list-item ng-repeat="contenedor in snCtrl.ngpaiContenedoresObjs">
+            <md-button class="md-whiteframe-1dp container-button" ng-href="{{ contenedor.ngRouteHref }}" ng-click="snCtrl.setSelectedContainer($index+1)" ng-class="{ 'md-raised md-accent' : snCtrl.isSelectedContainer($index+1) }">
+                <md-icon md-svg-icon="{{ contenedor.mdSvgIcon }}" class="container-icon"></md-icon>
+                {{ contenedor.name }}
+        </md-list-item>
+
+    </md-list>
+</md-content>

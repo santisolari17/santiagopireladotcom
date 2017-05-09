@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Playball';
+  font-weight: 400;
+  font-style: normal;
+  src: url('fonts/Playball-regular/Playball-regular.eot');
+  src: url('fonts/Playball-regular/Playball-regular.eot?#iefix') format('embedded-opentype'),
+       local('Playball'),
+       local('Playball-regular'),
+       url('fonts/Playball-regular/Playball-regular.woff2') format('woff2'),
+       url('fonts/Playball-regular/Playball-regular.woff') format('woff'),
+       url('fonts/Playball-regular/Playball-regular.ttf') format('truetype'),
+       url('fonts/Playball-regular/Playball-regular.svg#Playball') format('svg');
+}
+
+@font-face {
+  font-family: 'Overlock';
+  font-weight: 400;
+  font-style: normal;
+  src: url('fonts/Overlock-regular/Overlock-regular.eot');
+  src: url('fonts/Overlock-regular/Overlock-regular.eot?#iefix') format('embedded-opentype'),
+       local('Overlock'),
+       local('Overlock-regular'),
+       url('fonts/Overlock-regular/Overlock-regular.woff2') format('woff2'),
+       url('fonts/Overlock-regular/Overlock-regular.woff') format('woff'),
+       url('fonts/Overlock-regular/Overlock-regular.ttf') format('truetype'),
+       url('fonts/Overlock-regular/Overlock-regular.svg#Overlock') format('svg');
+}
+
+@font-face {
+  font-family: 'Croissant One';
+  font-weight: 400;
+  font-style: normal;
+  src: url('fonts/Croissant-One-regular/Croissant-One-regular.eot');
+  src: url('fonts/Croissant-One-regular/Croissant-One-regular.eot?#iefix') format('embedded-opentype'),
+       local('Croissant One'),
+       local('Croissant-One-regular'),
+       url('fonts/Croissant-One-regular/Croissant-One-regular.woff2') format('woff2'),
+       url('fonts/Croissant-One-regular/Croissant-One-regular.woff') format('woff'),
+       url('fonts/Croissant-One-regular/Croissant-One-regular.ttf') format('truetype'),
+       url('fonts/Croissant-One-regular/Croissant-One-regular.svg#CroissantOne') format('svg');
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  font-weight: 400;
+  font-style: normal;
+  src: url('fonts/Simonetta-regular/Simonetta-regular.eot');
+  src: url('fonts/Simonetta-regular/Simonetta-regular.eot?#iefix') format('embedded-opentype'),
+       local('Simonetta'),
+       local('Simonetta-regular'),
+       url('fonts/Simonetta-regular/Simonetta-regular.woff2') format('woff2'),
+       url('fonts/Simonetta-regular/Simonetta-regular.woff') format('woff'),
+       url('fonts/Simonetta-regular/Simonetta-regular.ttf') format('truetype'),
+       url('fonts/Simonetta-regular/Simonetta-regular.svg#Simonetta') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-style: normal;
+  src: url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot');
+  src: url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Regular'),
+       local('Roboto-Slab-regular'),
+       url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff2') format('woff2'),
+       url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff') format('woff'),
+       url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.ttf') format('truetype'),
+       url('fonts/Roboto-Slab-regular/Roboto-Slab-regular.svg#RobotoSlab') format('svg');
+}

@@ -1,0 +1,38 @@
+<md-tab label="{{ pCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pProducts">
+  <md-content class="md-padding background-fix">
+
+	<div layout="row" flex="100">
+		<p>Type in the textbox below to search...<p></p></p>
+	</div>
+	<div layout="row" flex="100">
+		<div layout="column" flex="100">
+			<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.getMatches(ctrl.searchText)" md-item-text="item.desc" placeholder="Search products" md-no-cache="true" ng-keyup="ctrl.enterKeyUp = $event; ctrl.autocompleteEnterPress()">
+				<md-item-template>
+					<span>{{item.id}} - </span>
+					<span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.desc}}</span>
+				</md-item-template>
+				<md-not-found>
+					No matches found.
+				</md-not-found>
+			</md-autocomplete>
+		</div>
+	</div>
+	<div layout="row">
+		<div layout="row" flex>
+			<md-button class="md-primary" ng-click="ctrl.appendSelected()">append</md-button>
+			<md-button class="md-primary" ng-click="ctrl.removeChecked()">Remove Selected</md-button>
+		</div>
+	</div>
+	<div layout="row">
+		<div layout="column" flex="100">
+			<md-list>	
+				<md-list-item ng-repeat="listed in ctrl.selectedProducts" class="santimd-narrow">
+					<md-checkbox ng-model="listed.removeFlag"></md-checkbox>
+					<p>{{ listed.desc }}</p>
+				</md-list-item>
+			</md-list>
+		</div>
+	</div>
+
+  </md-content>
+</md-tab>

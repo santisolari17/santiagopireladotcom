@@ -1,0 +1,33 @@
+﻿.naviHTabMNormal{
+    background-color: #FAFAFA;
+    background-image: none;
+}
+
+.hideableFrame{
+    background-image: none;
+    background-color: #FAFAFA;
+}
+
+#bobjid_1474560204697{
+    height:2px;
+    margin-left:4px;
+    margin-right:4px;
+    margin-top:0px;
+    margin-bottom:2px;
+    background-image:none;
+    background-color: #FAFAFA;
+    background-repeat:repeat-x;overflow:hidden;
+}
+
+.leftPanel {
+    background-color: #FAFAFA;
+}
+
+.dialogzone{
+    background-color: #FAFAFA;
+}
+
+.insetBorder{
+    background-color: #FAFAFA;
+    background-image:none;
+}

@@ -1,0 +1,20 @@
+<md-tab label="{{ mCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pMonthSelect">
+	<md-content class="md-padding background-fix" flex>
+
+		<div layout="row" flex>
+			<p>Select month range...</p>
+		</div>
+		<div layout="row" flex>
+			<div layout="column" flex="25">
+				<p>From</p>
+				<md-datepicker ng-model="ctrl.monthFromDate" md-max-date="ctrl.monthToDate" md-placeholder="Enter date" md-hide-icons="triangle" md-mode="month" md-date-locale="ctrl.monthFormat"></md-datepicker>
+			</div>
+			<span flex="20"></span>
+			<div layout="column" flex="25">
+				<p>To</p>
+				<md-datepicker ng-model="ctrl.monthToDate" md-min-date="ctrl.monthFromDate" md-max-date="ctrl.today" md-placeholder="Enter date" md-hide-icons="triangle" md-mode="month" md-date-locale="ctrl.monthFormat"></md-datepicker>
+			</div>
+		</div>
+		
+	</md-content>
+</md-tab>

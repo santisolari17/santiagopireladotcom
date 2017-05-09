@@ -1,0 +1,40 @@
+<md-tab label="{{ caCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pCaja">
+	<md-content class="md-padding background-fix" flex>
+
+		<div layout="row" flex>
+			<p>Select Caja...</p>
+		</div>
+
+		<div layout="row">
+
+			<form layout layout-align="center" layout-padding name="CajaForm" style="height: 86px;">
+				<div layout="row" flex>
+					<md-input-container class="md-block" flex>
+						<label>Ingrese un numero de caja</label>
+						<input name="Caja" ng-model="ctrl.currentCaja" md-maxlength="2" placeholder="Numero de caja como 01,02..." ng-pattern="ctrl.cajaRegEx" ng-keyup="ctrl.keyUpValueCaja = $event; ctrl.enterPressAppendCaja()" autocomplete="off" md-no-asterisk>
+						<div ng-messages="CajaForm.Caja.$error">
+							<div ng-message="pattern">El fomato valido es de la forma "01,02..."</div>
+							<div ng-message="md-maxlength">El valor maximo de caracteres debe ser 2</div>
+						</div>
+					</md-input-container>
+					<div>
+						<md-button class="md-primary md-raised" ng-disabled="!CajaForm.Caja.$valid" ng-click="ctrl.appendCaja()">Append</md-button>
+						<md-button class="md-primary md-raised" ng-click="ctrl.removeCheckedCajas()">Remove Selected</md-button>
+					</div>
+				</div>  
+			</form>
+			
+		</div>
+		<div layout="row">
+			<div layout="column" flex="100">
+				<md-list>	
+					<md-list-item ng-repeat="selectedCaja in ctrl.selectedCajas" class="santimd-narrow">
+						<md-checkbox ng-model="selectedCaja.removeFlag"></md-checkbox>
+						<p>{{ selectedCaja.Caja }}</p>
+					</md-list-item>
+				</md-list>
+			</div>
+		</div>
+
+	</md-content>
+</md-tab>

@@ -1,0 +1,37 @@
+<md-tab label="{{ deCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pDepartments">
+	<md-content class="md-padding background-fix">
+		
+		<div layout="row" flex>
+			<p>Select departments...</p>
+		</div>
+		<div layout="row">
+			<md-list layout="column">	
+				<md-list-item class="santimd-narrow">
+					<md-checkbox ng-model="ctrl.departmentSelectAll" ng-click="ctrl.toggleAlldepartments()"></md-checkbox>
+					<p>Select All</p>
+				</md-list-item>
+			</md-list>
+		</div>
+		<div layout="row">
+			<md-list layout="column">	
+				<md-list-item ng-repeat="departmentA in ctrl.departmentsRanged[0]" class="santimd-narrow">
+					<md-checkbox ng-model="departmentA.isSelected"></md-checkbox>
+					<p>{{ departmentA.departmentName }}</p>
+				</md-list-item>
+			</md-list>
+			<md-list layout="column">	
+				<md-list-item ng-repeat="departmentB in ctrl.departmentsRanged[1]" class="santimd-narrow">
+					<md-checkbox ng-model="departmentB.isSelected"></md-checkbox>
+					<p>{{ departmentB.departmentName }}</p>
+				</md-list-item>
+			</md-list>
+			<md-list layout="column">	
+				<md-list-item ng-repeat="departmentC in ctrl.departmentsRanged[2]" class="santimd-narrow">
+					<md-checkbox ng-model="departmentC.isSelected"></md-checkbox>
+					<p>{{ departmentC.departmentName }}</p>
+				</md-list-item>
+			</md-list>
+		</div>
+		
+	</md-content>
+</md-tab>

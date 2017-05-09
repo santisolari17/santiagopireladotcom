@@ -1,0 +1,36 @@
+<md-tab label="{{ prCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pProviders">
+  <md-content class="md-padding background-fix">
+
+	<div layout="row" flex>
+		<p>Type in the textbox below to search...<p></p></p>
+	</div>
+	<div layout="row" flex>
+		<div layout="column" flex="50">
+			<md-autocomplete md-selected-item="ctrl.selectedProvider" md-search-text="ctrl.providerSearchText" md-items="prov in ctrl.getProviderMatches(ctrl.providerSearchText)" md-item-text="prov.providerName" placeholder="Search providers" md-no-cache="true" ng-keyup="ctrl.keyUpValueProv = $event; ctrl.autocompleteEnterPressProv()">
+				<md-item-template>
+					<span>{{prov.id}} - </span>
+					<span md-highlight-text="ctrl.providerSearchText" md-highlight-flags="^i">{{prov.providerName}}</span>
+				</md-item-template>
+				<md-not-found>
+					No matches found.
+				</md-not-found>
+			</md-autocomplete>
+		</div>
+		<div layout="row" flex>
+			<md-button class="md-primary md-raised" ng-click="ctrl.appendSelectedProvider()">append</md-button>
+			<md-button class="md-primary md-raised" ng-click="ctrl.removeCheckedProvider()">Remove Selected</md-button>
+		</div>
+	</div>
+	<div layout="row">
+		<div layout="column" flex="100">
+			<md-list>	
+				<md-list-item ng-repeat="listed in ctrl.selectedProviders" class="santimd-narrow">
+					<md-checkbox ng-model="listed.removeFlag"></md-checkbox>
+					<p>{{ listed.providerName }}</p>
+				</md-list-item>
+			</md-list>
+		</div>
+	</div>
+
+  </md-content>
+</md-tab>

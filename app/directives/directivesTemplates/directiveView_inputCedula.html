@@ -1,0 +1,40 @@
+<md-tab label="{{ cCtrl.name }}" data-ng-if="ctrl.notHiddenStateOftab.pInputCedula">
+	<md-content class="md-padding background-fix" flex>
+
+		<div layout="row" flex>
+			<p>Select Cedula...</p>
+		</div>
+
+		<div layout="row">
+
+			<form layout layout-align="center" layout-padding name="cedulaForm" style="height: 86px;">
+				<div layout="row" flex>
+					<md-input-container class="md-block" flex>
+						<label>Ingrese un numero de Cedula</label>
+						<input name="cedula" ng-model="ctrl.currentCedula" md-maxlength="9" placeholder="V99999999" ng-pattern="ctrl.cedulaRegEx" ng-keyup="ctrl.keyUpValue = $event; ctrl.enterPressAppend()" autocomplete="off" md-no-asterisk>
+						<div ng-messages="cedulaForm.cedula.$error">
+							<div ng-message="pattern">El fomato valido es de la forma V99999999</div>
+							<div ng-message="md-maxlength">El valor maximo de caracteres debe ser 9</div>
+						</div>
+					</md-input-container>
+					<div>
+						<md-button class="md-primary" ng-disabled="!cedulaForm.cedula.$valid" ng-click="ctrl.appendCedula()">Append</md-button>
+						<md-button class="md-primary" ng-click="ctrl.removeCheckedCedulas()">Remove Selected</md-button>
+					</div>
+				</div>  
+			</form>
+			
+		</div>
+		<div layout="row">
+			<div layout="column" flex="100">
+				<md-list>	
+					<md-list-item ng-repeat="selectedCedula in ctrl.selectedCedulas" class="santimd-narrow">
+						<md-checkbox ng-model="selectedCedula.removeFlag"></md-checkbox>
+						<p>{{ selectedCedula.cedula }}</p>
+					</md-list-item>
+				</md-list>
+			</div>
+		</div>
+
+	</md-content>
+</md-tab>

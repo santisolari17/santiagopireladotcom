@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Santiago Pirela</title>
+    <link href="node_modules/angular-material/angular-material.min.css" rel="stylesheet" />
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/myStyle.css" rel="stylesheet" />
+    <link href="Content/fonts.css" rel="stylesheet" />
+</head>
+<body>
+	<body ng-app="ngPai" layout="column" ng-controller="sidenavController as snCtrl">
+
+    <md-toolbar class="md-whiteframe-3dp md-hue-1">
+        <div class="md-toolbar-tools">
+            
+            <md-button class="md-icon-button" aria-label="Menu" ng-click="snCtrl.closeSidenav()" ng-disabled="!snCtrl.isOpen">
+                <md-icon md-svg-icon="navigation:menu" class="md-48"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Home" ng-click="snCtrl.closeSidenav()" ng-href="#/dashboard">
+                <md-icon md-svg-icon="action:home" class="md-48"></md-icon>
+            </md-button>
+            <md-icon md-svg-icon="logoDecandido2" class="toolbar-logovideca"></md-icon>
+            
+            <p class="toolbar-title" flex>Santiago Pirela</p>
+
+            <span layout="row" flex>
+                <i class="fa fa-search toolbar-searchicon" id="toolbarSearchIcon"></i>
+                <input type="text" placeholder="Buscar..." class="toolbar-input" id="toolbarSearch" flex>
+            </span>
+
+            <span class="toolbar-username">Santiago Pirela</span>
+            
+            <md-menu ng-controller="toolbarController as tbCtrl">
+                
+                <md-button aria-label="menu usuario" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin="" md-svg-icon="svgUser" class="md-48 md-user-avatar"></md-icon>
+                </md-button>
+
+                <md-menu-content width="4">
+                    <md-menu-item ng-repeat="m in tbCtrl.userMenu">
+                        <md-button ng-click="tbCtrl.announceClick($index)">
+                            <md-icon md-menu-align-target="" md-svg-icon="{{ m.icon }}"></md-icon>
+                            {{m.menuLabel}} 
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+
+            </md-menu>
+            
+        </div>
+    </md-toolbar>
+
+    <div class="container" layout="row" flex>
+        <md-sidenav md-component-id="l-sidenav" class="locked-sidebar" md-is-locked-open="true">
+            <md-list>
+                <md-list-item ng-repeat="lsn in snCtrl.lSidenavObjs" ng-click="snCtrl.toggleExpanded($index+1)" ng-class="snCtrl.buttonClassesToggler($index+1)" aria-label="test">
+                    <md-icon md-svg-icon="{{ lsn.mdSvgIcon }}" ng-class="snCtrl.iconClassesToggler($index+1)"></md-icon>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <md-sidenav md-component-id="t-sidenav" class="toggleable-sidebar" ng-show="snCtrl.isOpen" md-is-locked-open="true" md-whiteframe="4">
+            <section ng-repeat="tsn in snCtrl.tSidenavObjs" ng-show="snCtrl.isSelected($index+1)" layout="column">
+                <span ngpai-directive="{{ tsn.ngpaiDirective }}"></span>
+            </section>
+        </md-sidenav>
+        <md-content ng-controller="paramDialogController as pdCtrl" flex>
+            <ng-view></ng-view>
+        </md-content>
+    </div>
+    
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="app/appConfig/config.js"></script>
+    <script>
+	    System
+		    .import('boot')
+		    .catch( console.error.bind(console) );
+    </script>
+    <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>

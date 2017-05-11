@@ -16,6 +16,7 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 	-o-transition:0.5s all;
+	color: lightblue;
 }
 body input[type="text"],body input[type="submit"],body textarea,body input[type="button"]{
 	-webkit-appearance:none;

@@ -1,11 +1,27 @@
 jQuery(function($) {'use strict',
 
-    $('#top-navbar').load('topnavbar.html');
+	// Dynamic loads
+    $('#top-navbar').load('topnavbar.html',function(){
 
-    $('#index-content').load('index-content.html',function(){
-        $('#index_btn').addClass('active');
-    });
+    	switch ($('#section-flag').val()){
 
+			case 'index': $('#index_btn').addClass('active');
+			break;
+
+			case 'keyskills': $('#keyskills_btn').addClass('active');
+			break;
+
+			case 'workexperience': $('#workexperience_btn').addClass('active');
+			break;
+
+            case 'portfolio': $('#portfolio_btn').addClass('active');
+			break;
+
+            case 'contact': $('#contact_btn').addClass('active');
+			break;
+		}
+
+	});
     $('#main-footer').load('footer.html');
 
 	//#main-slider

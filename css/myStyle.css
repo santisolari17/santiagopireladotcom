@@ -7,12 +7,12 @@
     min-height: 100% !important;
 }
 
-.item.active{
+.item-active-adjust{
     height: 960px !important;
 }
 
 .content-adjust{
-    padding-top: 100px;
+    padding-top: 90px;
 }
 
 /* Sticky footer styles

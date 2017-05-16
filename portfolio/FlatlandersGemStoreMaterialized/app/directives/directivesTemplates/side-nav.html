@@ -1,0 +1,21 @@
+<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="leftSidenav" class="md-whiteframe-4dp" ng-click="store.toggleSideNav()">
+	<md-list>
+		<md-list-item>
+			<md-input-container flex>
+				<label>Search gem</label>
+				<input type="text"></input>
+				<md-icon aria-label="right" class="material-icons">search</md-icon>
+			</md-input-container>
+		</md-list-item>
+
+		<md-list-item ng-repeat="productRow in store.products">
+			<md-button ng-click="store.select(productRow)" layout-fill style="text-align:left">
+				<!--<md-icon aria-label="right" class="material-icons">chevron_right</md-icon> -->
+				<md-icon md-svg-src="app/images/cubeitem.svg" class="avatar"></md-icon>
+				{{ productRow.name }}
+			</md-button>
+			<!--<md-divider ng-if="!$last"></md-divider>
+			<md-divider ng-if="$last"></md-divider>-->
+		</md-list-item>
+	</md-list>
+</md-sidenav>

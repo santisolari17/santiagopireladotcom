@@ -49,7 +49,7 @@
 					</md-input-container>
 				</md-list-item>
 
-				<md-list-item ng-repeat="productRow in store.products | filter: gemFilter" ng-init="store.select(productRow)">
+				<md-list-item ng-repeat="productRow in store.products | filter: gemFilter">
 					<md-button ng-click="store.select(productRow);store.toggleSideNav()" layout-fill style="text-align:left">
 						<!--<md-icon aria-label="right" class="material-icons">chevron_right</md-icon> -->
 						<md-icon md-svg-src="app/images/cubeitem.svg" class="avatar"></md-icon>
